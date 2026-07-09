@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const YOUR_NAME = "jordan lee";
+const YOUR_NAME = "emily hua";
 
 const NAV_LINKS = [
   { label: "introduction", to: "/" },
@@ -13,9 +13,8 @@ const NAV_LINKS = [
 // dark: true = white text (for use over a photo/dark hero)
 // dark: false = black text (for use on plain white pages)
 export default function Nav({ dark = false }) {
-  const base = dark ? "text-white/90" : "text-neutral-500";
-  const active = dark ? "text-white" : "text-black";
-  const nameColor = dark ? "text-white" : "text-black";
+  const base = dark ? "text-white/80" : "text-[#8a8983]";
+  const nameColor = dark ? "text-white" : "text-[#1a1a1a]";
 
   return (
     <div className="flex items-start justify-between p-6 md:p-10">
@@ -28,8 +27,8 @@ export default function Nav({ dark = false }) {
             key={link.to}
             to={link.to}
             className={({ isActive }) =>
-              `hover:${dark ? "text-white" : "text-black"} transition-colors ${
-                isActive ? active : base
+              `transition-colors hover:text-[#E1417A] ${
+                isActive ? "text-[#E1417A]" : base
               }`
             }
           >

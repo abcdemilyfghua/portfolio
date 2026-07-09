@@ -28,21 +28,21 @@ const EXPERIENCE = [
 
 export default function Experience() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F2F1ED]">
       <Nav />
       <section className="px-6 md:px-10 py-12 md:py-16 max-w-4xl mx-auto">
-        <h1 className="text-lg font-semibold lowercase mb-10">experience</h1>
+        <h1 className="text-lg font-semibold lowercase mb-10 text-[#1a1a1a]">experience</h1>
         <div className="space-y-10">
           {EXPERIENCE.map((job, idx) => (
-            <div key={idx} className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-2 md:gap-8 border-t border-neutral-200 pt-6">
-              <span className="text-xs text-neutral-400 font-mono uppercase tracking-wide">
+            <div key={idx} className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-2 md:gap-8 border-t border-[#dedcd4] pt-6">
+              <span className="text-xs text-[#E1417A] font-mono uppercase tracking-wide">
                 {job.dates}
               </span>
               <div>
-                <h2 className="text-sm font-semibold lowercase">
-                  {job.role} <span className="text-neutral-400 font-normal">· {job.org}</span>
+                <h2 className="text-sm font-semibold lowercase text-[#1a1a1a]">
+                  {job.role} <span className="text-[#8a8983] font-normal">· {job.org}</span>
                 </h2>
-                <p className="text-sm text-neutral-700 leading-relaxed lowercase mt-2">
+                <p className="text-sm text-[#5c5b56] leading-relaxed lowercase mt-2">
                   {job.description}
                 </p>
               </div>

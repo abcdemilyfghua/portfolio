@@ -24,8 +24,8 @@ function SizeToggle({ size, setSize }) {
           onClick={() => setSize(s)}
           className={`w-7 h-7 flex items-center justify-center rounded-full transition-colors ${
             size === s
-              ? "bg-black text-white"
-              : "text-neutral-400 hover:text-black"
+              ? "bg-[#E1417A] text-white"
+              : "text-[#8a8983] hover:text-[#E1417A]"
           }`}
         >
           {s}
@@ -40,11 +40,11 @@ export default function Art() {
   const config = SIZE_CONFIG[size];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F2F1ED]">
       <Nav />
 
       <section className="px-6 md:px-10 pb-4 flex items-center justify-between max-w-6xl mx-auto">
-        <h1 className="text-lg font-semibold lowercase">art</h1>
+        <h1 className="text-lg font-semibold lowercase text-[#1a1a1a]">art</h1>
         <SizeToggle size={size} setSize={setSize} />
       </section>
 
@@ -69,3 +69,4 @@ export default function Art() {
     </div>
   );
 }
+
