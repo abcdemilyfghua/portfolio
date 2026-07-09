@@ -1,1 +1,1 @@
-a little personal portfolio.
+a little personal portfolio website
