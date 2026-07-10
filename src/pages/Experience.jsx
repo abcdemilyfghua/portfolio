@@ -30,6 +30,58 @@ const SECTIONS = [
     ],
   },
   {
+    label: "projects",
+    entries: [
+      {
+        role: "em - ai focus app for students",
+        org: "react, node/express, supabase, claude api",
+        dates: "june - july 2026",
+        description:
+          "build a full-stack productivity app with an ai voice that prioritizes your task list and tags emotional triggers in a rant log for longitudinal self-reflection. engineered a rest api with node/express, designed a postgresql schema in supabase for persistent task and rant storage, and integrated the claude api for personalized, context-aware responses.",
+      },
+      {
+        role: "snappy - ai video clip assistant",
+        org: "swift, swiftui, ffmpeg, deepgram api, claude api, cloudflare workers, hackathon",
+        dates: "june 2026",
+        description:
+          "built a native macos app that transcribes, tags, and enables chat-based search across video clips. engineered a processing pipeline combining ffmpeg, deepgram transcription, and the claude api with a caching layer, deployed behind a cloudflare worker as a secure api proxy.",
+      },
+      {
+        role: "medicine reminder robot",
+        org: "3d printing, hackathon",
+        dates: "september 2024",
+        description:
+          "collaborated in a 36-hour hackathon to build a 3d-printed robot with an automated water dispenser, voice reminders, and a companion app for medication tracking; led the project presentation to judges.",
+      },
+    ],
+  },
+  {
+    label: "work",
+    entries: [
+      {
+        role: "barista and server",
+        org: "john 3:16 malaysian delights",
+        dates: "aug 2024 — aug 2025",
+        description:
+          "prepared drinks and desserts, packaged take-out orders, and served customers in a fast-paced restaurant environment; strengthened skills in time management, multitasking, and quick problem-solving.",
+      },
+      {
+        role: "english, math, violin & piano tutor",
+        org: "self-employed, vancouver, canada",
+        dates: "2018 — 2025",
+        description:
+          "taught students of varying ages, building lesson plans tailored to each student's pace across four subjects.",
+      },
+      {
+        role: "program assistant",
+        org: "connaught skating club",
+        dates: "2018 — 2023",
+        description:
+          "taught and supported children learning to skate through leading fun games, sharing skills and tips, and organizing exercises and circuits.",
+      },
+    ],
+  },
+  {
     label: "leadership",
     entries: [
       {
@@ -75,52 +127,7 @@ const SECTIONS = [
           "ensured a positive experience for all by offering warm welcomes to guests, conducting campus tours, and contributing to various events; created engaging videos and content for the school's social media accounts.",
       },
     ],
-  },
-  {
-    label: "work",
-    entries: [
-      {
-        role: "barista and server",
-        org: "john 3:16 malaysian delights",
-        dates: "aug 2024 — aug 2025",
-        description:
-          "prepared drinks and desserts, packaged take-out orders, and served customers in a fast-paced restaurant environment; strengthened skills in time management, multitasking, and quick problem-solving.",
-      },
-      {
-        role: "english, math, violin & piano tutor",
-        org: "self-employed, vancouver, canada",
-        dates: "2018 — 2025",
-        description:
-          "taught students of varying ages, building lesson plans tailored to each student's pace across four subjects.",
-      },
-      {
-        role: "program assistant",
-        org: "connaught skating club",
-        dates: "2018 — 2023",
-        description:
-          "taught and supported children learning to skate through leading fun games, sharing skills and tips, and organizing exercises and circuits.",
-      },
-    ],
-  },
-  {
-    label: "projects",
-    entries: [
-      {
-        role: "snappy - ai video clip assistant",
-        org: "swift, swiftui, ffmpeg, deepgram api, claude api, cloudflare workers",
-        dates: "june 2026",
-        description:
-          "built a native macos app that transcribes, tags, and enables chat-based search across video clips. engineered a processing pipeline combining ffmpeg, deepgram transcription, and the claude api with a caching layer, deployed behind a cloudflare worker as a secure api proxy.",
-      },
-      {
-        role: "medicine reminder robot",
-        org: "3d printing, hackathon",
-        dates: "september 2024",
-        description:
-          "collaborated in a 36-hour hackathon to build a 3d-printed robot with an automated water dispenser, voice reminders, and a companion app for medication tracking; led the project presentation to judges.",
-      },
-    ],
-  },
+  }
 ];
 
 function Entry({ entry }) {
