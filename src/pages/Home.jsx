@@ -25,39 +25,26 @@ const BIO = {
 };
 
 const COLUMNS = [
-  {
-    title: "what i'm up to",
-    items: [
-      "studying computer science as a rising sophomore at georgia tech",
-      "rowing with the club team on the chattahoochee, my first season and already hooked on the sport, the coaches, and the people",
-      "serving as vp internal for gt international ambassadors, a culture org supporting international students, planning formals and retreats to keep the club close-knit",
-      "spending the summer in the bay area, researching software history with the computer history museum's software preservation group",
-      "traveling through europe with my sister: vienna for my cousin's wedding, then paris and london",
-      "running, walking my dog, and cooking something new in between",
-    ],
-  },
-  {
-    title: "what i think about",
-    items: [
-      "the small beautiful things, and how much there is to be amazed by if you're paying attention",
-      "how much story lives inside every person you pass, and how fast a stranger becomes a best friend",
-      "how much knowledge is at our fingertips right now, from google and ai to a good book",
-      "whatever i'm reading or watching: right now, tomorrow and tomorrow and tomorrow and the glass castle",
-      "my own patterns, journaling my way toward understanding who i am and who i'm becoming",
-    ],
-  },
-  {
-    title: "what i like to create",
-    items: [
-      "photos, an absurd number of them, each one a small souvenir of a moment",
-      "playlists and albums on spotify, one of my favorite ways to spend an afternoon",
-      "music on violin, my longest love, plus piano, flute, and now guitar",
-      "short films and vlogs, including the hype video i edited for my rowing team",
-      "paintings, doodles, and friendship bracelets",
-      "baked goods, mostly for the people (and dog) i love",
-      "writing, mostly journaling for now, a blog is next",
-    ],
-  },
+  [
+    "an ",
+    { text: "engineer", highlight: true },
+    " chasing curiosity across code, the chattahoochee, and cities I haven't seen yet.",
+  ],
+  [
+    "an ",
+    { text: "innovator", highlight: true },
+    " who turns ordinary afternoons into baked goods, playlists, and songs on the violin.",
+  ],
+  [
+    "a ",
+    { text: "reflection", highlight: true },
+    " of the people who learn alongside and inspire me, known and unknown alike.",
+  ],
+  [
+    "an ",
+    { text: "admirer", highlight: true },
+    " of my best friends, the earth, and the small, beautiful, overlooked things.",
+  ],
 ];
 
 function TypewriterIntro({ onDone }) {
@@ -118,44 +105,20 @@ function Hero() {
   );
 }
 
-function ItemContent({ item }) {
-  if (typeof item === "string") return <>{item}</>;
+// One column, a single identity line — the noun right after "a/an" renders in pink.
+function IdentityColumn({ parts }) {
   return (
-    <>
-      {item.map((part, i) =>
+    <p className="text-sm text-[#3a3a37] leading-relaxed lowercase">
+      {parts.map((part, i) =>
         typeof part === "string" ? (
           <React.Fragment key={i}>{part}</React.Fragment>
         ) : (
-          <a
-            key={i}
-            href={part.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-[#E1417A] text-[#1a1a1a]"
-          >
+          <span key={i} className="text-[#E1417A]">
             {part.text}
-          </a>
+          </span>
         )
       )}
-    </>
-  );
-}
-
-// Renders a column's items as one flowing paragraph instead of a numbered list —
-// each item becomes a sentence, joined with periods.
-function JournalEntry({ title, items }) {
-  return (
-    <div className="border-t border-[#dedcd4] py-8 md:py-10">
-      <p className="text-xs uppercase tracking-widest text-[#E1417A] mb-3">{title}</p>
-      <p className="text-base md:text-lg text-[#3a3a37] leading-relaxed lowercase max-w-3xl">
-        {items.map((item, idx) => (
-          <React.Fragment key={idx}>
-            <ItemContent item={item} />
-            {idx < items.length - 1 ? ". " : "."}
-          </React.Fragment>
-        ))}
-      </p>
-    </div>
+    </p>
   );
 }
 
@@ -182,15 +145,15 @@ function AboutSection() {
   }, []);
 
   return (
-    <section className="bg-[#F2F1ED] px-6 md:px-10 py-16 md:py-20">
-      <div className="max-w-4xl mx-auto">
-        {/* intro band: small round headshot beside bio, full width, no side grid */}
-        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center mb-4">
+    <section className="bg-[#F2F1ED] px-6 md:px-10 py-10 md:py-14 h-screen flex items-center">
+      <div className="max-w-5xl mx-auto w-full">
+        {/* headshot + bio + info, full width, on top */}
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center mb-10 md:mb-12">
           <img
             ref={imgRef}
             src={HEADSHOT}
             alt={YOUR_NAME}
-            className={`w-28 h-28 md:w-36 md:h-36 rounded-full object-cover shrink-0 transition-all duration-1000 ${
+            className={`w-32 md:w-44 aspect-[4/5] object-cover shrink-0 transition-all duration-1000 ${
               inView ? "grayscale-0" : "grayscale"
             }`}
           />
@@ -198,7 +161,7 @@ function AboutSection() {
             <p className="text-base md:text-lg text-[#3a3a37] leading-relaxed lowercase mb-3">
               {BIO.intro}
             </p>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
               <span className="text-[#8a8983]">{BIO.email}</span>
               {BIO.elsewhere.map((link) => (
                 <a
@@ -213,10 +176,12 @@ function AboutSection() {
           </div>
         </div>
 
-        {/* stacked full-width journal entries, no numbers, no columns */}
-        {COLUMNS.map((col) => (
-          <JournalEntry key={col.title} title={col.title} items={col.items} />
-        ))}
+        {/* four identity-line columns, below */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
+          {COLUMNS.map((parts, idx) => (
+            <IdentityColumn key={idx} parts={parts} />
+          ))}
+        </div>
       </div>
     </section>
   );
