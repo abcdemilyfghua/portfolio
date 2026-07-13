@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Nav from "../components/Nav.jsx";
+import EmilyHero from "../components/EmilyHero.jsx";
 
 // EDIT ME: swap for your own photos, bio, and links
 const YOUR_NAME = "emily hua";
@@ -79,32 +80,6 @@ function TypewriterIntro({ onDone }) {
   );
 }
 
-function Hero() {
-  // Pick one photo at random each time the page loads.
-  const [heroImg] = useState(
-    () => HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)]
-  );
-
-  return (
-    <section className="relative h-screen w-full overflow-hidden bg-black">
-      <img
-        src={heroImg}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-      />
-      <div className="absolute inset-0 bg-black/25 pointer-events-none" />
-      <div className="relative z-10">
-        <Nav dark />
-      </div>
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center pointer-events-none">
-        <span className="text-white/70 text-xs lowercase tracking-widest animate-bounce">
-          scroll
-        </span>
-      </div>
-    </section>
-  );
-}
-
 // One column, a single identity line — the noun right after "a/an" renders in pink.
 function IdentityColumn({ parts }) {
   return (
@@ -145,8 +120,9 @@ function AboutSection() {
   }, []);
 
   return (
-    <section className="bg-[#F2F1ED] px-6 md:px-10 py-10 md:py-14 h-screen flex items-center">
-      <div className="max-w-5xl mx-auto w-full">
+    <section className="bg-[#F2F1ED] px-6 md:px-10 py-10 md:py-14 min-h-screen flex flex-col">
+      <Nav />
+      <div className="max-w-5xl mx-auto w-full flex-1 flex flex-col justify-center">
         {/* headshot + bio + info, full width, on top */}
         <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center mb-10 md:mb-12">
           <img
@@ -194,7 +170,7 @@ export default function Home() {
     <div>
       {!introDone && <TypewriterIntro onDone={() => setIntroDone(true)} />}
       <div className={`transition-opacity duration-700 ${introDone ? "opacity-100" : "opacity-0"}`}>
-        <Hero />
+        <EmilyHero />
         <AboutSection />
       </div>
     </div>
