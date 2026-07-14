@@ -4,21 +4,9 @@ import Nav from "../components/Nav.jsx";
 // EDIT ME: swap for your real posts/newsletter entries
 const POSTS = [
   {
-    title: "on taste as a design skill",
-    date: "june 2026",
-    excerpt: "what separates a good decision from a defensible one, and why it's rarely about the tool.",
-    href: "#",
-  },
-  {
-    title: "shipping the boring version first",
-    date: "april 2026",
-    excerpt: "notes on why the unglamorous mvp usually teaches you more than the polished one.",
-    href: "#",
-  },
-  {
-    title: "a year of side projects that didn't ship",
-    date: "january 2026",
-    excerpt: "what i learned anyway, and why i'm not calling it wasted time.",
+    title: "first post",
+    date: "july 2026",
+    excerpt: "coming soon",
     href: "#",
   },
 ];

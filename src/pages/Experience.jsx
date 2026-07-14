@@ -37,7 +37,7 @@ const SECTIONS = [
         org: "react, node/express, supabase, claude api",
         dates: "june - july 2026",
         description:
-          "build a full-stack productivity app with an ai voice that prioritizes your task list and tags emotional triggers in a rant log for longitudinal self-reflection. engineered a rest api with node/express, designed a postgresql schema in supabase for persistent task and rant storage, and integrated the claude api for personalized, context-aware responses.",
+          "built a full-stack productivity app with an ai voice that prioritizes your task list and tags emotional triggers in a rant log for longitudinal self-reflection. engineered a rest api with node/express, designed a postgresql schema in supabase for persistent task and rant storage, and integrated the claude api for personalized, context-aware responses.",
       },
       {
         role: "snappy - ai video clip assistant",
@@ -108,7 +108,7 @@ const SECTIONS = [
       {
         role: "concertmaster, vanstrings chamber music",
         org: "vancouver, canada",
-        dates: "2018 — present",
+        dates: "2018 — 2025",
         description:
           "lead performances by providing musical direction, fostering collaboration, and contributing to the ensemble's overall success.",
       },
