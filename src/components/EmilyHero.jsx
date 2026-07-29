@@ -7,7 +7,7 @@ const WORD = "EMILY";
 
 // Shown by default (no hover) in the space below the letters.
 const WELCOME_MESSAGE =
-  "hi, i'm emily. welcome to my little corner of the internet. i'm so happy you are here.";
+  "hi, i'm emily. welcome to my corner of the internet. i'm so happy you are here.";
 
 // One sentence per letter — shown while that letter is hovered.
 const SENTENCES = {
@@ -19,7 +19,7 @@ const SENTENCES = {
 };
 // ---------------------------------------------------------------------
 
-const POOL = ["{", "}", "0", "(", ")", "%", "#", "*", "/", "+", "1"];
+const POOL = ["{", "}", "0", "(", ")", "%", "#", "*", "/", "+", "1", "$", "@", "&"];
 const BG_COLOR = "#d3d0c5";
 const PINK = "#e22869";
 const ACTIVE = "#7a1030";
